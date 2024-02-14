@@ -1,0 +1,52 @@
+public class Instrument {
+
+    // TO DO: Declare private variables for instrument name, manufacturer, year built, and cost
+   protected String instrumentName;
+   protected String manufacturer;
+   protected int yearBuilt;
+   protected int cost;
+    // TO DO: Define a no-argument constructor as well as an argument based constructor
+   public Instrument() {
+      instrumentName = "none";
+      manufacturer = "none"; 
+      yearBuilt = 0;
+      cost = 0;
+   }
+   public Instrument(String userInstrument, String userManufacturer, int userYearBuilt, int userCost) {
+      instrumentName = userInstrument;
+      manufacturer = userManufacturer; 
+      yearBuilt = userYearBuilt;
+      cost = userCost;
+   }
+      
+    // TO DO: Define accessor and mutator methods for all private variables
+   public String getInstrument() {
+      return instrumentName;
+   }
+   public void setInstrument(String userInstrument) {
+      instrumentName = userInstrument;
+   }
+   public String getManufacturer() {
+      return manufacturer;
+   }
+   public void setManufacturer(String userManufacturer) {
+      manufacturer = userManufacturer; 
+   }
+   public int getYear() {
+      return yearBuilt;
+   }
+   public void setYear(int userYearBuilt) {
+      yearBuilt = userYearBuilt;
+   }
+   public int getCost() {
+      return cost;
+   }
+   public void setCost(int userCost) {
+      cost = userCost;
+   }
+    // TO DO: Override the toString method that returns the desired string to represent an instrument
+    public String toString() {
+       return "Instrument Information: \n   Name: " + instrumentName + "\n   Manufacturer: " + manufacturer 
+       + "\n   Year built: " + yearBuilt + "\n   Cost: " + cost;
+    }
+}
