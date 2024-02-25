@@ -32,3 +32,76 @@ public class Course{
       return "Course Information: \n   Course Number: " + courseNumber + "\n   Course Title: " + courseTitle;
    }
 }
+//This class needs to be a subclass of Course
+public class OfferedCourse extends Course {
+    // TODO: Declare private fields - instructorName, term, classTime
+   private String instructorName;
+   private String term;
+   private String classTime;
+    // TODO: Define both an argument based constructor and a no-arg one
+   public OfferedCourse() {
+      courseNumber = "null";
+      courseTitle = "null";
+      instructorName = "null";
+      term = "null";
+      classTime = "null";
+   }
+   public OfferedCourse(String inputCourseNumber, String inputCourseTitle, String inputInstructor, String inputTerm, String inputTime) {
+      courseNumber = inputCourseNumber;
+      courseTitle = inputCourseTitle;
+      instructorName = inputInstructor;
+      term = inputTerm;
+      classTime = inputTime;
+   }
+    // TODO: Define mutator methods -
+    //      setInstructorName(), setTerm(), setClassTime()
+   public void setInstructorName(String inputInstructor) {
+      instructorName = inputInstructor;
+   }
+   public void setTerm(String inputTerm) {
+      term = inputTerm;
+   }
+   public void setClassTime(String inputTime) {
+      classTime = inputTime;
+   }
+    // TODO: Define accessor methods -
+    //      getInstructorName(), getTerm(), getClassTime()
+   public String getInstructorName(){
+      return instructorName;
+   }
+   public String getTerm(){
+      return term;
+   }
+   public String getClassTime(){
+      return classTime;
+   }
+    // TODO: Override the toString method so that it produces the desired output string
+   public String toString() {
+      return "Course Information: \n   Course Number: " + courseNumber + "\n   Course Title: " + courseTitle
+      + "\n   Instructor Name: " + instructorName + "\n   Term: " + term + "\n   Class Time: " + classTime;
+   }
+}
+import java.util.Scanner;
+
+public class CourseInformation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String courseNumber, courseTitle;
+        String offeredNumber, offeredTitle, instructorName, term, classTime;
+
+        courseNumber = scanner.nextLine();
+        courseTitle = scanner.nextLine();
+
+        offeredNumber = scanner.nextLine();
+        offeredTitle = scanner.nextLine();
+        instructorName = scanner.nextLine();
+        term = scanner.nextLine();
+        classTime = scanner.nextLine();
+
+        Course course = new Course(courseNumber, courseTitle);
+        System.out.println(course);
+
+        OfferedCourse offeredCourse = new OfferedCourse(offeredNumber, offeredTitle, instructorName, term, classTime);
+        System.out.println(offeredCourse);
+    }
+}
