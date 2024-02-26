@@ -77,8 +77,7 @@ public class OfferedCourse extends Course {
    }
     // TODO: Override the toString method so that it produces the desired output string
    public String toString() {
-      return "Course Information: \n   Course Number: " + courseNumber + "\n   Course Title: " + courseTitle
-      + "\n   Instructor Name: " + instructorName + "\n   Term: " + term + "\n   Class Time: " + classTime;
+      return super.toString() + "\n   Instructor Name: " + instructorName + "\n   Term: " + term + "\n   Class Time: " + classTime;
    }
 }
 import java.util.Scanner;
