@@ -50,3 +50,72 @@ public class Instrument {
        + "\n   Year built: " + yearBuilt + "\n   Cost: " + cost;
     }
 }
+public class StringInstrument extends Instrument {
+    // TO DO: Declare private variables for number of frets and number of strings
+   private int numStrings;
+   private int numFrets;
+    // TO DO: Define a no-argument constructor as well as an argument based constructor
+   public StringInstrument() {
+      instrumentName = "none";
+      manufacturer = "none"; 
+      yearBuilt = 0;
+      cost = 0;
+      numStrings = 0;
+      numFrets = 0;
+   }
+   public StringInstrument(String userInstrument, String userManufacturer, int userYearBuilt, int userCost, int userStrings, int userFrets) {
+      instrumentName = userInstrument;
+      manufacturer = userManufacturer; 
+      yearBuilt = userYearBuilt;
+      cost = userCost;
+      numStrings = userStrings;
+      numFrets = userFrets;
+   }
+    // TO DO: Define accessor and mutator methods for both private variables
+   public int getNumFrets() {
+      return numFrets;
+   }
+   public void setNumFrets(int userFrets) {
+      numFrets = userFrets;
+   }
+   public int getNumStrings() {
+      return numStrings;
+   }
+   public void setNumStrings(int userStrings) {
+      numStrings = userStrings;
+   }
+    // TO DO: Override the toString method that returns the desired string to represent a string instrument
+    public String toString() {
+       return super.toString() + "\n   Number of strings: " + numStrings + "\n   Number of frets: " + numFrets;
+    }
+}
+import java.util.Scanner;
+
+public class InstrumentInformation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String instrumentName, manufacturer, stringName, stringManufacturer;
+        int yearBuilt, cost, stringYearBuilt, stringCost, numStrings, numFrets;
+
+        instrumentName = scanner.nextLine();
+        manufacturer = scanner.nextLine();
+        yearBuilt = scanner.nextInt();
+        scanner.nextLine();
+        cost = scanner.nextInt();
+        scanner.nextLine();
+        stringName = scanner.nextLine();
+        stringManufacturer = scanner.nextLine();
+        stringYearBuilt = scanner.nextInt();
+        stringCost = scanner.nextInt();
+        numStrings = scanner.nextInt();
+        numFrets = scanner.nextInt();
+
+        Instrument instrument = new Instrument(instrumentName, manufacturer, yearBuilt, cost);
+        System.out.println(instrument);
+
+        StringInstrument stringInstrument = new StringInstrument(stringName, stringManufacturer, stringYearBuilt,
+                stringCost, numStrings, numFrets);
+        System.out.println(stringInstrument);
+    }
+}
